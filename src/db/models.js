@@ -1,6 +1,6 @@
 const mongoose=require('mongoose');
 
-//Creating Trade
+//Creating Trade Schema
 const tradeSchema=mongoose.Schema({
     ticker:{
         type: String,
@@ -8,7 +8,7 @@ const tradeSchema=mongoose.Schema({
     },
     type:{
         type: String,
-        enum: ['Buy','sell'],
+        enum: ['Buy','Sell'],
         required: true
       },
     qty:{
@@ -31,7 +31,7 @@ const tradeSchema=mongoose.Schema({
     }
 })
 
-//Creating Holdings 
+//Creating Holdings Schema
 const holdingSchema=mongoose.Schema({
     ticker:{
         type: String,
