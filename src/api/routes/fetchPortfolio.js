@@ -1,9 +1,12 @@
 const express=require('express');
 const router=express.Router();
-const verifyTrade=require('../middleware/tradeValidator')
+const getPortfolio=require('../../services/getPortfolioService');
 
-router.get('/',verifyTrade,(req,resp)=>{
-    resp.send("fetch portfolio");
+//Endpoint for fetching the entire portfolio
+router.get('/',async (req,resp)=>{
+    const portfolio=await getPortfolio();    //makes a call to the service layer
+    
+    resp.send(portfolio);
 })
 
 

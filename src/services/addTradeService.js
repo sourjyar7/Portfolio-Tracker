@@ -1,4 +1,3 @@
-const Holding=require('../db/models');
 const handleFirstTrade=require('./handleFirstTrade');
 const handleSellTrade=require('./handleSellTrade');
 const handleBuyTrade=require('./handleBuyTrade');
