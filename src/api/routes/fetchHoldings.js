@@ -1,9 +1,12 @@
 const express=require('express');
 const router=express.Router();
-const verifyTrade=require('../middleware/tradeValidator')
+const HoldingsRetriever=require('../../services/getHoldingsService');
 
-router.get('/',verifyTrade,(req,resp)=>{
-    resp.send("fetch holdings");
+//Endpoint for fetching the holdings
+router.get('/',async (req,resp)=>{
+    const holdings=await HoldingsRetriever();    //makes a call to the service layer
+    
+    resp.send(holdings);
 })
 
 

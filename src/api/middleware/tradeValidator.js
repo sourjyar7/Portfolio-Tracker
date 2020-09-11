@@ -1,10 +1,10 @@
- const tradeValidator=require('../../utils/validators');
+ const tradeValidatorSchema=require('../../utils/tradeValidatorSchema');
 
  //Middleware for validating a user given trade
  const verifyTrade=async (req,resp,next)=>{
      
      try {
-        const value = await tradeValidator.validateAsync(req.body);
+        const value = await tradeValidatorSchema.validateAsync(req.body);
         next();
      }
     catch (err) {

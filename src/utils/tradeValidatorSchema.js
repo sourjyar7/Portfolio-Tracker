@@ -1,4 +1,5 @@
 const Joi = require('joi');
+
 //Creating a validation schema for a trade 
 const tradeSchema = Joi.object({
     ticker: Joi.string()

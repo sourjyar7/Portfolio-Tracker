@@ -7,7 +7,7 @@ const getTicker = require('../db/getTicker');
     async function TradeAdder(trade){
        
        try{
-          const ticker=await getTicker(trade);
+          const ticker=await getTicker(trade.ticker);
           if(ticker == null){
             return handleFirstTrade(trade);
           }
