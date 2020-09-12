@@ -9,8 +9,13 @@ router.post('/',verifyChange,async (req,resp)=>{
         "qty": req.body.qty,
         "price": req.body.price
     }
-    const msg=await TradeUpdater(req.body.symbol,req.body.tno,changes);
-    resp.send({"msg":msg, "changes": changes});
+    try{
+       const msg=await TradeUpdater(req.body.symbol,req.body.tno,changes);
+       resp.send({"msg":msg, "changes": changes});
+   }
+    catch(err){
+       resp.status(500).send("Internal Server Error !");
+   }
 })
 
 

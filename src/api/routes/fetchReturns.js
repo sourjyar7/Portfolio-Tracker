@@ -4,8 +4,13 @@ const router=express.Router();
 
 //Endpoint for fetching returns
 router.get('/',async (req,resp)=>{
-    const returns=await ReturnsRetriever();  //making call to service layer
-    resp.send({"returns":returns});
+    try{
+        const returns=await ReturnsRetriever();  //making call to service layer
+        resp.send({"returns":returns});
+    }
+    catch(err){
+        resp.status(500).send("Internal Server Error !");
+    }
 })
 
 

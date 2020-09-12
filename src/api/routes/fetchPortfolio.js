@@ -4,9 +4,13 @@ const PortfolioRetriever=require('../../services/getPortfolioService');
 
 //Endpoint for fetching the entire portfolio
 router.get('/',async (req,resp)=>{
-    const portfolio=await PortfolioRetriever();    //makes a call to the service layer
-    
-    resp.send(portfolio);
+    try{
+       const portfolio=await PortfolioRetriever();    //makes a call to the service layer
+       resp.send(portfolio);
+   }
+   catch(err){
+       resp.status(500).send("Internal Server Error !");
+   }
 })
 
 

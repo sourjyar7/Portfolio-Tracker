@@ -4,9 +4,13 @@ const HoldingsRetriever=require('../../services/getHoldingsService');
 
 //Endpoint for fetching the holdings
 router.get('/',async (req,resp)=>{
-    const holdings=await HoldingsRetriever();    //makes a call to the service layer
-    
-    resp.send(holdings);
+    try{
+      const holdings=await HoldingsRetriever();    //makes a call to the service layer
+      resp.send(holdings);
+    }
+    catch(err){
+      resp.status(500).send("Internal Server Error !");  
+    }
 })
 
 

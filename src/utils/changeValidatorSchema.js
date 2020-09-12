@@ -1,6 +1,6 @@
 const Joi = require('joi');
 
-//Creating a validation schema for a trade 
+//Creating a validation schema for an update
 const changeSchema = Joi.object({
     symbol: Joi.string()
         .alphanum()
