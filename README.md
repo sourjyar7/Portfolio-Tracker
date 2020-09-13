@@ -1,5 +1,5 @@
 # Portfolio-Tracker
-A REST Api that allows the user to build and track his own financial portfolio
+A REST Api that allows the user to build and track his own financial portfolio (for single user only) | Login/Signup feature not added
  #### Endpoints
   
   ####   1) URL : /Portfolio_Tracker/addTrade
