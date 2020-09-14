@@ -20,10 +20,13 @@
       This design therefore guarantees the following :-
         
             - Highly modular code
-            - Layers are loosely coupled and thus can be tested or changed independently.
-            - All functional modules in a particular layer are pure and only have a single responsibilty which again provides better testability.
+            - Layers are loosely coupled and thus can be unit tested or changed independently.
+            - All functional modules in a particular layer are pure and only have a single responsibilty which again provides better 
+              testability.
             - So if ever we wanted to change the technology stack (like the database used), we wont have to redesign the api
             
-   Technology Stack used : I have used node.js as the web framework and mongodb atlas as my database. I have also used the mongoose ORM to handle 
-                           and interact with mongoDB . Additionally I have used Redis Cloud as an in memory caching database for my server to improve response times.
+   ### Technology Stack used 
+   
+    I have used node.js as the web framework and mongodb atlas as my database. I have also used the mongoose ORM to handle 
+    and interact with mongoDB . Additionally I have used Redis Cloud as an in memory caching database for my server to improve response times.
                            
