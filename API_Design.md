@@ -24,10 +24,18 @@
             - All functional modules in a particular layer are pure and only have a single responsibilty which again provides better 
               testability.
             - So if ever we wanted to change the technology stack (like the database used), we wont have to redesign the api
-            
+            - Multi user support can be easily added without making huge changes        
    ### Technology Stack used 
    
     I have used node.js as the web framework and mongodb atlas as my database. I have also used the mongoose ORM to handle 
     and interact with mongoDB . Additionally I have used Redis Cloud as an in memory caching database for my server to improve response
     times.
+    
+    ### Implementation Optimisations
+    
+          - I have used redis to cache recent responses and ensured cache consistency by flushing whenever user makes changes to portfolio.
+          - Created index on db for faster querying time
+          
+    
+    
                            
