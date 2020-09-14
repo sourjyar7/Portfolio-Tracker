@@ -31,9 +31,10 @@
     and interact with mongoDB . Additionally I have used Redis Cloud as an in memory caching database for my server to improve response
     times.
     
-    ### Implementation Optimisations
+   ### Implementation Optimisations
     
-          - I have used redis to cache recent responses and ensured cache consistency by flushing whenever user makes changes to portfolio.
+          - I have used redis to cache recent responses and ensured cache consistency by flushing whenever user makes changes to 
+            portfolio.
           - Created index on db for faster querying time
           
     
