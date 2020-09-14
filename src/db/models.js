@@ -36,7 +36,8 @@ const holdingSchema=mongoose.Schema({
     ticker:{
         type: String,
         required: true,
-        unique: true
+        unique: true,
+        index: true    //creating index on ticker field
     },
     avgPrice:{
         type: mongoose.Decimal128,
