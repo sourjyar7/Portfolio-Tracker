@@ -1,13 +1,14 @@
-const getCachedHoldings = require('../cache/getCachedHoldings');
-const getHoldings=require('./getHoldingsService');
+const getCachedReturns= require('../cache/getCachedReturns');
+const setCachedReturns= require('../cache/setCachedReturns');
+const HoldingsRetriever=require('./getHoldingsService');
 
 //Implements business logic for calculating returns
 const ReturnsRetriever=async (redisClient)=>{
-   let cachedReturns=getCachedReturns(redisClient);
-   if(cachedReturns){
+   let cachedReturns=await getCachedReturns(redisClient);  //making call to cache layer for data 
+   if(cachedReturns !== null){
      return cachedReturns;
    }
-   holdings=await getHoldings();
+   holdings=await HoldingsRetriever(redisClient);
    if(holdings.length === 0)
       return 0;
    
