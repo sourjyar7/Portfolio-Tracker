@@ -35,7 +35,27 @@
     
           - I have used redis to cache recent responses and ensured cache consistency by flushing whenever user makes changes to 
             portfolio.
+            
           - Created index on db for faster querying time
+   
+   ### Possible Improvements
+   
+          - Addition of some sort of security encryption while receiving requests and serving responses like addition of API key
+            that can be used as a SSL certificate for authentication
+          
+          - For multiple user scenario the server can be scaled to be able to fork child processes to handle high loads
+          
+          - Data can be pre fetched and stored on the server cache as soon as user updates portfolio
+ 
+ ### Testing
+        
+        - Simple validation tests should be done to ensure the api is able to identify bad requests and returns appropriate status codes
+        - Functional testing of each end point to ensure that they work as desired by the business requirements
+        - Load testing can be done for multi user scenarios
+        - Performance testing to ensure that requests are served in reasonable time
+        - Each module should be tested individualy for runtime errors
+        - Some sort of penetration testing can also be done in cases where security is a concern
+           
           
     
     
