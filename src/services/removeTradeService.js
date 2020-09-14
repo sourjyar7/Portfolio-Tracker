@@ -1,8 +1,10 @@
 const getTicker = require("../db/getTicker");
 const saveHolding=require('../db/saveHolding');
+const flushCache=require('../cache/flushCache');
 
 //Implements the business logic for removing a trade
-const TradeRemover=async (symbol,tno)=>{
+const TradeRemover=async (symbol,tno,redisClient)=>{
+    flushCache(redisClient); //flushing the cache
     const ticker=await getTicker(symbol);
     const trade=ticker.trades[tno-1];
     ticker.avgPrice=trade.prevAvg;

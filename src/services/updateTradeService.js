@@ -1,9 +1,11 @@
+const flushCache = require("../cache/flushCache");
 const getTicker = require("../db/getTicker");
 const saveHolding=require('../db/saveHolding');
 
 
 //Implements the business logic for updating a trade
-const TradeUpdater=async (symbol,tno,info)=>{
+const TradeUpdater=async (symbol,tno,info,redisClient)=>{
+    flushCache(redisClient);    //flushing the cache
     const ticker=await getTicker(symbol);
     const trade=ticker.trades[tno-1];
     ticker.avgPrice=trade.prevAvg;

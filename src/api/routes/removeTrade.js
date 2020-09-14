@@ -5,7 +5,7 @@ const TradeRemover = require('../../services/removeTradeService');
 
 router.delete('/',verifyRemoval,async (req,resp)=>{
    try{
-       const msg=await TradeRemover(req.body.symbol,req.body.tno);
+       const msg=await TradeRemover(req.body.symbol,req.body.tno,req.redisClient);
        resp.send({"msg": msg, "removedTradeNo": req.body.tno});
    }
    catch(err){

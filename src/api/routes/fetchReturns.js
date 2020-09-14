@@ -5,7 +5,7 @@ const router=express.Router();
 //Endpoint for fetching returns
 router.get('/',async (req,resp)=>{
     try{
-        const returns=await ReturnsRetriever();  //making call to service layer
+        const returns=await ReturnsRetriever(req.redisClient);  //making call to service layer
         resp.send({"returns":returns});
     }
     catch(err){

@@ -10,7 +10,7 @@ router.post('/',verifyChange,async (req,resp)=>{
         "price": req.body.price
     }
     try{
-       const msg=await TradeUpdater(req.body.symbol,req.body.tno,changes);
+       const msg=await TradeUpdater(req.body.symbol,req.body.tno,changes,req.redisClient);
        resp.send({"msg":msg, "changes": changes});
    }
     catch(err){

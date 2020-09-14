@@ -5,7 +5,7 @@ const PortfolioRetriever=require('../../services/getPortfolioService');
 //Endpoint for fetching the entire portfolio
 router.get('/',async (req,resp)=>{
     try{
-       const portfolio=await PortfolioRetriever();    //makes a call to the service layer
+       const portfolio=await PortfolioRetriever(req.redisClient);    //makes a call to the service layer
        resp.send(portfolio);
    }
    catch(err){
