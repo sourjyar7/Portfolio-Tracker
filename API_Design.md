@@ -50,10 +50,15 @@
  ### Testing
         
         - Simple validation tests should be done to ensure the api is able to identify bad requests and returns appropriate status codes
+        
         - Functional testing of each end point to ensure that they work as desired by the business requirements
+        
         - Load testing can be done for multi user scenarios
+        
         - Performance testing to ensure that requests are served in reasonable time
+        
         - Each module should be tested individualy for runtime errors
+        
         - Some sort of penetration testing can also be done in cases where security is a concern
            
           
