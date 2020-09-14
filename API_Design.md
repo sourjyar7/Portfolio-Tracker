@@ -28,5 +28,6 @@
    ### Technology Stack used 
    
     I have used node.js as the web framework and mongodb atlas as my database. I have also used the mongoose ORM to handle 
-    and interact with mongoDB . Additionally I have used Redis Cloud as an in memory caching database for my server to improve response times.
+    and interact with mongoDB . Additionally I have used Redis Cloud as an in memory caching database for my server to improve response
+    times.
                            
