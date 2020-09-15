@@ -29,7 +29,7 @@
    
     I have used node.js as the web framework and mongodb atlas as my database. I have also used the mongoose ORM to handle 
     and interact with mongoDB . Additionally I have used Redis Cloud as an in memory caching database for my server to improve response
-    times.
+    times. Endpoints have been tested using Postman.
     
    ### Implementation Optimisations
     
@@ -37,6 +37,8 @@
             portfolio.
             
           - Created index on db for faster querying time
+          
+          - Used asynchronous calls wherever possible using async/await
    
    ### Possible Improvements
    
