@@ -2,8 +2,10 @@
 A REST Api that allows the user to build and track his own financial portfolio (for single user only) | Login/Signup feature not added
 
 Hosted at : (https://node-portfolio-api1.herokuapp.com/Portfolio_Tracker/)
- 
- #### Endpoints
+
+Design of Api : Checkout the API_Design.md file in this repository  
+
+#### Endpoints
   
   ####   1) URL : /Portfolio_Tracker/addTrade
   ####   2) Method: POST
